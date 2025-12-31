@@ -22,7 +22,7 @@ export const NavBar = () => {
             >
                 <Heading
                     as="h1"
-                    size="lg"
+                    fontSize="30px"
                     color={COLORS.crystalShade}
                     letterSpacing="0.1em"
                     textTransform="uppercase"
