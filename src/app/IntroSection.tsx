@@ -1,16 +1,16 @@
-import {Box, Heading, HStack, Image, Text, VStack} from "@chakra-ui/react";
+import {Box, Heading, HStack, Image, Stack, Text, VStack} from "@chakra-ui/react";
 import {COLORS} from "@/app/constants";
 
 export const IntroSection = () => {
     return (
         <>
-            <Box id="home" pb={12}>
-                <VStack
+            <Box id="home" pb={{md:6, base:12}} w={"100%"}>
+                <Stack
                     as="main"
                     gap={8}
                     textAlign="center"
-                    minH="60vh"
                     justify="center"
+                    direction="column"
                 >
                     <Image
                         src="build-a-website-wide.png"
@@ -18,7 +18,6 @@ export const IntroSection = () => {
                         width="100%"
                         objectFit="cover"
                         borderRadius="md"
-                        mx="auto"
                     />
                     <Heading
                         as="h2"
@@ -33,12 +32,12 @@ export const IntroSection = () => {
                         Software Engineer • Housing Developer • Artist — weaving geometry,
                         color, and story into every project.
                     </Text>
-                </VStack>
+                </Stack>
             </Box>
-            <Box id="about" w={"100%"} background={"#F4D085"} borderRadius="md">
-                <HStack>
+            <Box id="about"  background={"#F4D085"} borderRadius="md">
+                <Stack direction={{ base: "column", md: "row" }} p={{ base: 8, md: 6}}>
                     <Image
-                        h={"300px"}
+                        h={{ base: "100%" , md: "300px"}}
                         src="TheHeavensWeptShards.png"
                         alt="When the heavens wept shards"
                         borderRadius="md"
@@ -54,7 +53,7 @@ export const IntroSection = () => {
                             I have built, tell me. I want to know what your experience is.
                         </Text>
                     </VStack>
-                </HStack>
+                </Stack>
             </Box>
         </>
     )

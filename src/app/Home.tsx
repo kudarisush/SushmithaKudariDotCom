@@ -19,7 +19,7 @@ import {Contact} from "@/app/Contact";
 export default function Home() {
 
   return (
-      <Box bg={COLORS.background} >/
+      <Box bg={COLORS.background} w={"100%"}>
         <Head>
           <title >Sush Kudari • Engineer • Developer • Artist</title>
           <meta
@@ -28,9 +28,7 @@ export default function Home() {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <Box p={8}><NavBar /></Box>
-
+        <Box p={{base: 8, lg: 30}}><NavBar /></Box>
         <IntroSection />
 
         <Box id="engineering" pt={12}><Engineering /></Box>

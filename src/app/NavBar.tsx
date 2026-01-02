@@ -1,4 +1,4 @@
-import {Flex, Heading, HStack, Link} from "@chakra-ui/react";
+import {Flex, Heading, Link, Stack, Menu, Portal, Button} from "@chakra-ui/react";
 import NextLink from "next/link";
 import {COLORS} from "@/app/constants";;
 
@@ -14,24 +14,25 @@ export const NavBar = () => {
     ]
 
     return (
-        <Flex as="nav" position="sticky" top="0" zIndex="overlay" bg={COLORS.background} py={4} align="center" justify="space-between" mb={8}>
-            <Link
-                as={NextLink}
-                href="#home"
-                _hover={{ textDecoration: 'none' }}
-            >
-                <Heading
-                    as="h1"
-                    fontSize="30px"
-                    color={COLORS.crystalShade}
-                    letterSpacing="0.1em"
-                    textTransform="uppercase"
+        <Stack  direction={{ base: "column", lg:"row" }} >
+            <Flex as="nav" position="sticky" top="0" zIndex="overlay" bg={COLORS.background} align="center" justify="space-between" w={{base:"100%",md:"70%"}}>
+                <Link
+                    as={NextLink}
+                    href="#home"
+                    _hover={{ textDecoration: 'none' }}
                 >
-                    Sush Kudari
-                </Heading>
-            </Link>
-
-            <HStack gap={6}>
+                    <Heading
+                        as="h1"
+                        fontSize="30px"
+                        color={COLORS.crystalShade}
+                        letterSpacing="0.1em"
+                        textTransform="uppercase"
+                    >
+                        Sush Kudari
+                    </Heading>
+                </Link>
+            </Flex>
+            <Stack direction={{ base: "column", lg:"row" }} gap={6} w={{base:"100%",md:"50%"}}>
                 {tabs.map(({ label, href }) => (
                     <Link
                         as={NextLink}
@@ -44,7 +45,7 @@ export const NavBar = () => {
                         {label}
                     </Link>
                 ))}
-            </HStack>
-        </Flex>
+            </Stack>
+        </Stack>
     )
 }
