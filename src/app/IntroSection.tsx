@@ -13,7 +13,7 @@ export const IntroSection = () => {
                     direction="column"
                 >
                     <Image
-                        src="build-a-website-wide.png"
+                        src="buils_a_website.png"
                         alt="Build a Man"
                         width="100%"
                         objectFit="cover"
